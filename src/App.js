@@ -35,7 +35,7 @@ function App() {
       path: "/",
       element: <RootLayout />,
       children: [
-        { index: true, element: <HomePage /> }, // path: '
+        { index: true, element: <HomePage /> }, // path: ''
         {
           path: "events",
           element: <EventsRootLayout />,
