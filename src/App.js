@@ -23,11 +23,13 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import EditEventPage from "./pages/EditEvent";
 import ErrorPage from "./pages/Error";
-import EventDetailPage, { loaderDetail } from "./pages/EventDetail";
-import EventsPage, { loaderEvents } from "./pages/Events";
+import EventDetailPage, {
+  loader as eventDetailLoader,
+} from "./pages/EventDetail";
+import EventsPage, { loader as eventsLoader } from "./pages/Events";
 import EventsRootLayout from "./pages/EventsRoot";
 import HomePage from "./pages/Home";
-import NewEventPage, { actionNewEvent } from "./pages/NewEvent";
+import NewEventPage, { action as newEventAction } from "./pages/NewEvent";
 import RootLayout from "./pages/Root";
 
 function App() {
@@ -45,18 +47,18 @@ function App() {
             {
               index: true,
               element: <EventsPage />,
-              loader: loaderEvents,
+              loader: eventsLoader,
             },
             {
               path: ":id",
-              loader: loaderDetail,
+              loader: eventDetailLoader,
               id: "event-details",
               children: [
                 { index: true, element: <EventDetailPage /> },
                 { path: "edit", element: <EditEventPage /> },
               ],
             },
-            { path: "new", element: <NewEventPage />, action: actionNewEvent },
+            { path: "new", element: <NewEventPage />, action: newEventAction },
           ],
         },
       ],

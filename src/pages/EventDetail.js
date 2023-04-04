@@ -9,7 +9,7 @@ const EventDetailPage = () => {
 
 export default EventDetailPage;
 
-export const loaderDetail = async ({ request, params }) => {
+export const loader = async ({ request, params }) => {
   const id = params.id;
   const response = await fetch("http://localhost:8080/events/" + id);
 

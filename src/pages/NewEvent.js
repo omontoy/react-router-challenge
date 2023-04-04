@@ -7,7 +7,7 @@ const NewEventPage = () => {
 
 export default NewEventPage;
 
-export const actionNewEvent = async ({ request, params }) => {
+export const action = async ({ request, params }) => {
   const data = await request.formData();
 
   const eventData = {
