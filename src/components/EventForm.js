@@ -19,7 +19,6 @@ function EventForm({ method, event }) {
     navigate("..");
   }
 
-  console.log({ data });
   return (
     <Form method="POST" className={classes.form}>
       {data && data.errors && (
@@ -38,7 +37,7 @@ function EventForm({ method, event }) {
           id="title"
           type="text"
           name="title"
-          // required
+          required
           defaultValue={event ? event.title : ""}
         />
       </p>
@@ -48,7 +47,7 @@ function EventForm({ method, event }) {
           id="image"
           type="url"
           name="image"
-          // required
+          required
           defaultValue={event ? event.image : ""}
         />
       </p>
@@ -58,7 +57,7 @@ function EventForm({ method, event }) {
           id="date"
           type="date"
           name="date"
-          // required
+          required
           defaultValue={event ? event.date : ""}
         />
       </p>
@@ -68,7 +67,7 @@ function EventForm({ method, event }) {
           id="description"
           name="description"
           rows="5"
-          // required
+          required
           defaultValue={event ? event.description : ""}
         />
       </p>
